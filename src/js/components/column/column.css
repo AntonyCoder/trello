@@ -1,0 +1,15 @@
+.column-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+    
+    background-color: #dee2e5;
+    color: #1e3c4d;
+}
+
+.addcard-button{
+    color: #7c8e97;
+    cursor: pointer;
+}
