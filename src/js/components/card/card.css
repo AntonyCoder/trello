@@ -1,0 +1,25 @@
+.card{
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 14px;
+    position: relative;
+    min-height: 50px;
+}
+
+.remove-button{
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.card:hover .remove-button{
+    display: block;
+}
+
+

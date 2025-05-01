@@ -1,0 +1,36 @@
+.add-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title-input-field{
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    min-height: 70px;
+    resize: none;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.title-input-field:focus{
+    outline: none;
+}
+
+.add-card-confirm-button{
+    background-color: #5ca84d;
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.add-card-confirm-button:hover{
+    background-color: #6ec35d;
+}
+
+.cancel-button{
+    cursor: pointer;
+}
