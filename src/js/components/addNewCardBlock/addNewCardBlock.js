@@ -1,8 +1,8 @@
 import './addNewCardBlock.css'
-import { Card } from '../card/card';
 
 export default class AddNewCardBlock {
-    constructor() {
+    constructor(column) {
+        this.column = column;
         this.onCancelButton = this.onCancelButton.bind(this);
         this.onAddCardConfirmButton = this.onAddCardConfirmButton.bind(this);
     }
@@ -50,13 +50,8 @@ export default class AddNewCardBlock {
     onAddCardConfirmButton(e) {
         const textInputField = e.target.previousElementSibling.value.trim();
         if (!textInputField) return;
-
-        const card = new Card(textInputField);
-        const newCard = card.renderCard();
-
-        const cardsWrapper = e.target.closest('.add-card-wrapper').previousElementSibling;
-
-        cardsWrapper.appendChild(newCard);
+        
+        this.column.addCard(textInputField)
 
         this.onCancelButton(e);
     }

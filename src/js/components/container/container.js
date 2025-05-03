@@ -1,19 +1,29 @@
 import './container.css'
 import { Column } from '../column/column';
+import { load } from '../../storage';
 
 export class MainContainer {
 
-    renderContainer(){
+    renderContainer() {
         const container = document.createElement('div');
         container.classList.add('container');
-
         document.body.appendChild(container);
-        const column = new Column();
-        const todo = column.renderColumn('TODO');
-        const inProgress = column.renderColumn('IN PROGRESS');
-        const done = column.renderColumn('DONE');
 
-        container.append(todo, inProgress, done);
+        const savedState = load();
 
+        const titles = ['TODO', 'IN PROGRESS', 'DONE'];
+        window.columnsRef = {};
+
+        titles.forEach(title => {
+            const column = new Column(title);
+            const colElem = column.renderColumn();
+            container.appendChild(colElem);
+
+            window.columnsRef[title] = column;
+
+            if (savedState[title]) {
+                savedState[title].forEach(cardText => column.addCard(cardText));
+            }
+        })
     }
 }

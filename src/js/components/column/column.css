@@ -17,3 +17,9 @@
     color: #7c8e97;
     cursor: pointer;
 }
+
+.cards-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}

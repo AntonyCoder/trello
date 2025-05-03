@@ -1,8 +1,9 @@
 import './card.css'
 
 export class Card {
-    constructor(text) {
+    constructor(text, column) {
         this.text = text;
+        this.column = column;
         this.removeCard = this.removeCard.bind(this)
     }
     //Отрисовка новой карточки
@@ -25,5 +26,6 @@ export class Card {
     removeCard(e) {
         const card = e.target.closest('pre');
         card.remove();
+        this.column.removeCard(this);
     }
 }

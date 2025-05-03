@@ -22,4 +22,9 @@
     display: block;
 }
 
+.dragging {
+    z-index: 9999;
+    cursor: grabbing;
+}
+
 

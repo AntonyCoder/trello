@@ -1,0 +1,9 @@
+.background{
+    background-color: #d5dbde;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 14px;
+    position: relative;
+}
