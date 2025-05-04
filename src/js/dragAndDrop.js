@@ -1,3 +1,4 @@
+import createBackground from "./components/background/createBackground";
 import insertCard from "./insertCard";
 import { save } from "./storage";
 
@@ -28,6 +29,7 @@ export default function dragAndDrop() {
 
         actualCard.classList.add('dragging');
 
+
         document.documentElement.addEventListener('mousemove', onMouseMove);
         document.documentElement.addEventListener('mouseup', onMouseUp);
 
@@ -39,11 +41,12 @@ export default function dragAndDrop() {
         document.body.appendChild(actualCard);
         actualCard.style.top = e.clientY - offsetY + 'px';
         actualCard.style.left = e.clientX - offsetX + 'px';
+        createBackground(actualCard, e, parentElement, nextSibling);
     }
 
     //События при отпускании мыши
     const onMouseUp = (e) => {
-    
+
         insertCard(actualCard, e, parentElement, nextSibling);
 
         document.documentElement.removeEventListener('mousemove', onMouseMove);
@@ -51,7 +54,8 @@ export default function dragAndDrop() {
         actualCard.classList.remove('dragging');
 
         actualCard.style = ''; //Сбросим стили
-
+        const background = document.querySelector('.background');
+        if (background) background.remove();
         saveState();
     }
 
