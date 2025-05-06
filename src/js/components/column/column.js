@@ -53,7 +53,7 @@ export class Column {
         columnContainer.insertBefore(newCardBlock, addCardButton);
         addCardButton.style.display = 'none';
     }
-
+    // Добавление новой карточки
     addCard(text) {
         const card = new Card(text, this);
         const cardEl = card.renderCard();
@@ -61,12 +61,12 @@ export class Column {
         this.cardsWrapper.appendChild(cardEl);
         this.saveToStorage();
     }
-
+    //Удаление карточки
     removeCard(cardInstance) {
         this.cards = this.cards.filter(c => c !== cardInstance);
         this.saveToStorage();
     }
-
+    //Сохранение состояния
     saveToStorage() {
         const currentState = load();
         currentState[this.title] = this.cards.map(c => c.text);

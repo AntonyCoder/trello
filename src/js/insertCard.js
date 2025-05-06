@@ -1,4 +1,5 @@
 export default function insertCard(actualCard, e, parentElement, nextSibling) {
+    
     const isBackground = actualCard.classList.contains('background');
     if (!isBackground) {
         e.target.style.display = 'none';

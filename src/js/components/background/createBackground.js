@@ -1,6 +1,6 @@
 import insertCard from '../../insertCard';
-import './createBackground.css'
-
+import './createBackground.css';
+//Создание фона при перетаскивании карточки 
 export default function createBackground(actualCard, e, parentElement, nextSibling) {
 
     const oldBackground = document.querySelector('.background');
@@ -15,29 +15,3 @@ export default function createBackground(actualCard, e, parentElement, nextSibli
     insertCard(background, e, parentElement, nextSibling);
     actualCard.style.display = '';
 }
-// actualCard.style.display = 'none';
-
-// let dropTarget = document.elementFromPoint(e.clientX, e.clientY);
-// if (dropTarget.classList.contains('cards-wrapper')) {
-//     dropTarget = document.elementFromPoint(e.clientX, e.clientY + 15);
-// }
-// actualCard.style.display = '';
-
-// let targetWrapper = dropTarget.closest('.cards-wrapper');
-// const targetColumn = dropTarget.closest('.column-container');
-
-// const dropTargetRect = dropTarget.getBoundingClientRect();
-// let middleDropTarget = dropTargetRect.top + dropTargetRect.height / 2;
-
-// if (targetColumn && !targetWrapper) {
-//     targetWrapper = targetColumn.querySelector('.cards-wrapper');
-//     targetWrapper.appendChild(background);
-// } else if (targetColumn && targetWrapper) {
-//     if (middleDropTarget < e.clientY) {
-//         targetWrapper.insertBefore(background, dropTarget.nextSibling);
-//     } else {
-//         targetWrapper.insertBefore(background, dropTarget);
-//     }
-// } else {
-//     parentElement.insertBefore(background, nextSibling);
-// }
